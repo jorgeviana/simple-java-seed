@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+dependencies {
+    testCompile 'org.junit.jupiter:junit-jupiter:5.4.0'
+    testCompile 'org.assertj:assertj-core:3.12.2'
+    testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
+    testCompile 'org.mockito:mockito-core:2.25.1'
+    testCompile 'org.mockito:mockito-junit-jupiter:2.25.1'
+
+    // https://blog.jdriven.com/2018/10/combining-spock-junit-5-tests/
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:5.4.0"
+}
+
+repositories {
+    jcenter()
+}
+
+test {
+    useJUnitPlatform()
+}
